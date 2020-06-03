@@ -3,11 +3,7 @@ pipeline {
      
 	stages {
 		
-		stage('Stage 1 : Git Checkout') {
-			steps {
-				git 'https://github.com/GOPISGN/Calculator_Application.git'
-			}
-		}
+		
 			
 		stage('Stage 2 : Pre-check Python is installed or not') {
 			steps {
