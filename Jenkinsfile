@@ -5,7 +5,7 @@ pipeline {
 		
 		
 			
-		stage('Stage 2 : Pre-check Python is installed or not') {
+		stage('Stage 1 : Pre-check Python is installed or not') {
 			steps {
 				bat 'echo "Check Python Version"'
 				bat 'python --version'
@@ -14,7 +14,7 @@ pipeline {
             }
         }
 		
-		stage('Stage 3 : Unit Test') {
+		stage('Stage 2 : Unit Test') {
 			parallel {
 				
 				stage('Testcase 1 : Verify Calculator with Addition') {
@@ -51,4 +51,19 @@ pipeline {
 			}
 		}
 	}
+	
+	post {
+		success {
+			bat 'echo "Build Passed"'
+			mail to:'gopinath.sgn@gmail.com', subject:'Build Passed', body:'Build is completed and successful.'
+		}
+		
+		failure {
+			bat 'echo "Build Failed"'
+			mail to:'gopinath.sgn@gmail.com', subject:'Build Failed', body:'Please fix!'
+		}
+				
+	}
+
+	
 }
