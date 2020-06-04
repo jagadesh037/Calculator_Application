@@ -56,7 +56,7 @@ pipeline {
 		always {
 			bat 'echo "Clean the files from WS"'
 			bat 'del calculator.py'
-			bat 'del .gitignore.py'
+			bat 'del .gitignore'
 			bat 'del README.md'
 		}
 		success {
