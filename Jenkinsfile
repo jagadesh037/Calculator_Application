@@ -53,14 +53,20 @@ pipeline {
 	}
 	
 	post {
+		always {
+			bat 'echo "Clean the files from WS"'
+			bat 'del calculator.py'
+			bat 'del .gitignore.py'
+			bat 'del README.md'
+		}
 		success {
 			bat 'echo "Build Passed"'
-			mail to:'gopinath.sgn@gmail.com', subject:'Build Passed', body:'Build is completed and successful.'
+		
 		}
 		
 		failure {
 			bat 'echo "Build Failed"'
-			mail to:'gopinath.sgn@gmail.com', subject:'Build Failed', body:'Please fix!'
+			bat 'echo "Please fix!'"
 		}
 				
 	}
