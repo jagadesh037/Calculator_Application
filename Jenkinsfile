@@ -61,7 +61,6 @@ pipeline {
 		}
 		success {
 			bat 'echo "Build Passed"'
-			mail to: 'gopinath.sgn@gmail.com', subject: 'Build passed', body: 'Build Passed' 
 		
 		}
 		
