@@ -66,7 +66,7 @@ pipeline {
 		
 		failure {
 			bat 'echo "Build Failed"'
-			bat 'echo "Please fix!'"
+			bat 'echo "Please fix!"'
 		}
 				
 	}
